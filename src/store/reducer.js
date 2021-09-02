@@ -2,7 +2,7 @@ export const appReducer = (state = { text: '' }, action) => {
   if (action.type === 'hello') {
     return {
       ...state,
-      text: 'Hello World!',
+      text: 'Hello World!^m',
     };
   }
   if (action.type === 'goodbye') {

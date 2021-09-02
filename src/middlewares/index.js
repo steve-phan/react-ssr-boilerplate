@@ -1,17 +1,17 @@
 import React from 'react';
-import { renderToString } from 'react-dom/server';
+import ReactDOMServer from 'react-dom/server';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { getHTML } from './utils/html';
 import { appReducer } from 'src/store/reducer';
-import App from 'src/client';
+import App from 'src/client/App';
 const initalState = {
   text: '',
 };
 const store = createStore(appReducer, { text: '' });
 
 const page = getHTML(
-  renderToString(
+  ReactDOMServer.renderToString(
     <Provider store={store}>
       <App />
     </Provider>

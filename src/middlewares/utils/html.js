@@ -1,6 +1,6 @@
 import serialize from 'serialize-javascript';
 
-export const getHTML = ({ html, initialState }) => `<!DOCTYPE html>
+export const getHTML = (html, initialState) => `<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,9 +9,12 @@ export const getHTML = ({ html, initialState }) => `<!DOCTYPE html>
     <title>Document</title>
 </head>
 <body>
-    <div id="root">${html}</div>
+    <div id="root">
+       ${html}
+    </div>
     <script>
-    window._PRELOADED_STATE__ = ${serialize(initialState, { isJSON: true })}
+    window.__PRELOADED_STATE__ = ${serialize(initialState, { isJSON: true })}
     </script>
+    <script src="/static/index.js"></script>
 </body>
 </html>`;
