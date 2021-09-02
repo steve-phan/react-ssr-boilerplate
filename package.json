@@ -1,0 +1,31 @@
+{
+  "name": "react-ssr-boilerplate",
+  "version": "1.0.0",
+  "description": "A React SSR with redux material-ui boilerplate",
+  "scripts": {
+    "build": "babel src/server.js -d dist",
+    "start": "babel src/server.js -d dist && node dist/server.js",
+    "dev": "nodemon --exec babel-node ./src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steve Phan <vietappeu@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "material-ui": "^0.20.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/runtime": "^7.15.3",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "nodemon": "^2.0.12"
+  }
+}
