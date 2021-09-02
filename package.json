@@ -3,8 +3,6 @@
   "version": "1.0.0",
   "description": "A React SSR with redux material-ui boilerplate",
   "scripts": {
-    "build": "babel src/server.js -d dist",
-    "start": "babel src/server.js -d dist && node dist/server.js",
     "dev": "nodemon --exec babel-node ./src/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +14,8 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.4",
-    "redux": "^4.1.1"
+    "redux": "^4.1.1",
+    "serialize-javascript": "^6.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.14.8",
