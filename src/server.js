@@ -10,6 +10,7 @@ const app = express();
 /*
  * MiddleWares
  */
+app.use('/dist', express.static('./dist'));
 app.use('/static', express.static('./src/assets'));
 
 app.get('/', handleRender);

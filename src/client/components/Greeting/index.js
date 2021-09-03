@@ -3,20 +3,18 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const index = () => {
   const dispatch = useDispatch();
-  const state = useSelector((state) => state);
-  console.log(state);
+  const { text } = useSelector((state) => state);
   return (
     <div>
-      {/* {JSON.parse(state)} */}
-
-      <h1>Status : {state.text} </h1>
+      <h1>Status : {text} </h1>
       <button
         onClick={() => {
-          console.log('Clicked');
-          dispatch({ type: 'hello' });
+          text !== 'Hello World'
+            ? dispatch({ type: 'hello' })
+            : dispatch({ type: 'goodbye' });
         }}
       >
-        Change
+        Change Status
       </button>
     </div>
   );

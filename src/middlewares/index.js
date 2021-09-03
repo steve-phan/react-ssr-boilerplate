@@ -5,10 +5,9 @@ import { Provider } from 'react-redux';
 import { getHTML } from './utils/html';
 import { appReducer } from 'src/store/reducer';
 import App from 'src/client/App';
-const initalState = {
-  text: '',
-};
-const store = createStore(appReducer, { text: '' });
+import { initalState } from '../store/reducer';
+
+const store = createStore(appReducer, initalState);
 
 const page = getHTML(
   ReactDOMServer.renderToString(

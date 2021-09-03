@@ -9,12 +9,10 @@ export const getHTML = (html, initialState) => `<!DOCTYPE html>
     <title>Document</title>
 </head>
 <body>
-    <div id="root">
-       ${html}
-    </div>
+    <div id="root">${html}</div>
     <script>
     window.__PRELOADED_STATE__ = ${serialize(initialState, { isJSON: true })}
     </script>
-    <script src="/static/index.js"></script>
+    <script src="./dist/bundle.js"></script>
 </body>
 </html>`;

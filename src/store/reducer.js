@@ -1,8 +1,11 @@
-export const appReducer = (state = { text: '' }, action) => {
+export const initalState = {
+  text: 'Hello World',
+};
+export const appReducer = (state = { ...initalState }, action) => {
   if (action.type === 'hello') {
     return {
       ...state,
-      text: 'Hello World!^m',
+      text: 'Hello World',
     };
   }
   if (action.type === 'goodbye') {
