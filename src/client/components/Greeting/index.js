@@ -1,13 +1,24 @@
+import Button from '@material-ui/core/Button';
+import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
+const useStyles = makeStyles(({ color }) => ({
+  omgButton: {
+    background: color.deep,
+  },
+}));
 
 const index = () => {
   const dispatch = useDispatch();
   const { text } = useSelector((state) => state);
+  const classes = useStyles();
+
   return (
-    <div>
+    <>
       <h1>Status : {text} </h1>
-      <button
+      <Button
+        className={classes.omgButton}
         onClick={() => {
           text !== 'Hello World'
             ? dispatch({ type: 'hello' })
@@ -15,8 +26,8 @@ const index = () => {
         }}
       >
         Change Status
-      </button>
-    </div>
+      </Button>
+    </>
   );
 };
 
